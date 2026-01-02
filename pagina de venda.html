@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LotoSmart Pro - O Gerador Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-escuro: #0a192f;
+            --azul-claro: #112240;
+            --verde-sucesso: #27ae60;
+            --dourado: #ffcf4b;
+            --branco: #ffffff;
+            --cinza: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--branco);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Header / Urgency Bar */
+        .urgency-bar {
+            background: var(--dourado);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
+            color: var(--branco);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--branco);
+        }
+
+        .hero h1 span {
+            color: var(--dourado);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--verde-sucesso);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 60px 20px;
+            background: var(--cinza);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--azul-escuro);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--verde-sucesso);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* VS Section */
+        .comparison {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vs-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: var(--azul-escuro);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            flex-wrap: wrap;
+        }
+
+        .vs-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+
+        .vs-item h3 { color: var(--dourado); margin-bottom: 10px; }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 20px;
+            background: var(--branco);
+        }
+
+        .testimonial-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            min-width: 300px;
+            background: var(--cinza);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--verde-sucesso);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 20px;
+            text-align: center;
+            background: radial-gradient(circle, #1a365d 0%, #0a192f 100%);
+            color: white;
+        }
+
+        .price-box {
+            background: white;
+            color: #333;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            border: 4px solid var(--dourado);
+        }
+
+        .old-price { text-decoration: line-through; color: #888; }
+        .new-price { font-size: 3rem; color: var(--verde-sucesso); font-weight: 800; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .vs-box { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="urgency-bar">
+        ⚡ Atenção: Apenas 12 vagas com preço promocional disponíveis hoje!
+    </div>
+
+    <section class="hero">
+        <h1>Transforme sua Sorte em <span>Estratégia Matemática</span></h1>
+        <p>Pare de perder dinheiro com jogos aleatórios. Use o mesmo sistema de fechamento que os profissionais usam para cercar os 15 pontos na Lotofácil.</p>
+        <a href="#preço" class="cta-button">GARANTIR MEU ACESSO AGORA</a>
+        <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">
+            🔒 Acesso imediato após a confirmação do pagamento
+        </div>
+    </section>
+
+    <section class="benefits">
+        <h2 class="section-title">Por que usar o LotoSmart Pro?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i>📊</i>
+                <h3>Inteligência de Dados</h3>
+                <p>Nosso algoritmo analisa os últimos 100 concursos para identificar tendências de dezenas quentes e frias.</p>
+            </div>
+            <div class="benefit-card">
+                <i>⚡</i>
+                <h3>Economia de Tempo</h3>
+                <p>Gere 10, 20 ou 50 jogos otimizados em menos de 30 segundos. Adeus conferência manual!</p>
+            </div>
+            <div class="benefit-card">
+                <i>🛡️</i>
+                <h3>Confiabilidade</h3>
+                <p>Sistema baseado em fechamentos matemáticos reais, não em "promessas mágicas".</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <h2 class="section-title">A Diferença é Clara</h2>
+        <div class="vs-box">
+            <div class="vs-item">
+                <h3>Apostador Comum</h3>
+                <p>Joga datas de aniversário e números aleatórios. Tem 1 chance em 3,2 milhões.</p>
+            </div>
+            <div style="font-size: 2rem; font-weight: bold; color: var(--dourado);">VS</div>
+            <div class="vs-item">
+                <h3>Usuário LotoSmart</h3>
+                <p>Usa desdobramentos matemáticos para aumentar as chances de acerto em até 400%.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">Quem usa, aprova!</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"No primeiro fechamento que fiz, acertei 13 pontos. O sistema se pagou logo de cara."</p>
+                <br><strong>- Ricardo S., Rio de Janeiro</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"Muito simples de usar pelo celular. Faço meus jogos no intervalo do trabalho."</p>
+                <br><strong>- Maria Oliveira, Minas Gerais</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"Sempre fui cético, mas a matemática não mente. Acertei 14 pontos semana passada!"</p>
+                <br><strong>- José Augusto, Paraná</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="preço">
+        <h2 style="margin-bottom: 30px;">Pronto para mudar seus resultados?</h2>
+        <div class="price-box">
+            <p>Acesso Vitalício + Bônus Exclusivos</p>
+            <p class="old-price">De R$ 197,00</p>
+            <p style="font-size: 1.2rem;">Por apenas</p>
+            <p class="new-price">R$ 97,00</p>
+            <p>Ou 12x de <strong>R$ 9,74</strong></p>
+            <br>
+            <a href="#" class="cta-button" style="font-size: 1.1rem; width: 100%;">SIM! QUERO GANHAR NA LOTOFÁCIL</a>
+            <p style="margin-top: 15px; font-size: 0.8rem;">💳 Cartão de Crédito, PIX ou Boleto</p>
+        </div>
+        <div style="margin-top: 40px;">
+            <p>🛡️ <strong>Garantia Blindada de 7 Dias:</strong> Se não gostar, devolvemos seu dinheiro!</p>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 20px; text-align: center; background: #eee; font-size: 0.8rem;">
+        <p>&copy; 2026 LotoSmart Pro - Todos os direitos reservados.</p>
+        <p>Aviso: Resultados passados não garantem lucros futuros. Jogue com responsabilidade.</p>
+    </footer>
+
+</body>
+</html>
